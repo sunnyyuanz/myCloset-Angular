@@ -32,15 +32,18 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleLoginError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
   }
 
-  public userGetInfo(userGetInfo: any): Observable<any> {
-    console.log(userGetInfo);
-    let user = localStorage.getItem('user');
+  userGetInfo(): Observable<any> {
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
+    console.log(token);
     return this.http
-      .get(apiUrl + `users/${user}`, userGetInfo)
-      .pipe(catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
+      .get(apiUrl + `users/${user}`, {
+        headers: new HttpHeaders({ Authorization: `Bearer${token}` }),
+      })
+      .pipe(map(this.extractResponseData), catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
   }
 
-  public GetWishList(wishList: any): Observable<any> {
+  GetWishList(wishList: any): Observable<any> {
     console.log(wishList);
     let user = localStorage.getItem('user');
     return this.http
@@ -48,7 +51,7 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
   }
 
-  public AddToWishList(product_id: any, wishList: any): Observable<any> {
+  AddToWishList(product_id: any, wishList: any): Observable<any> {
     console.log(product_id, wishList);
     let user = localStorage.getItem('user');
     return this.http
@@ -56,7 +59,7 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
   }
 
-  public RemoveFromWishList(product_id: any, wishList: any): Observable<any> {
+  RemoveFromWishList(product_id: any, wishList: any): Observable<any> {
     console.log(product_id, wishList);
     let user = localStorage.getItem('user');
     return this.http
@@ -64,18 +67,23 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
   }
 
-  public RemoveUser(userDetails: any): Observable<any> {
+  RemoveUser(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http
       .delete(apiUrl + `users/${userDetails.username}`, userDetails)
       .pipe(catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
   }
 
-  public EditUser(userDetails: any): Observable<any> {
+  EditUser(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http
       .put(apiUrl + `users/${userDetails.username}`, userDetails)
       .pipe(catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
+  }
+
+  private extractResponseData(res: any): any {
+    const body = res;
+    return body || {};
   }
 
   private handleLoginError(error: HttpErrorResponse): any {

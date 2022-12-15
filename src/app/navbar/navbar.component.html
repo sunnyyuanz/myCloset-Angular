@@ -1,0 +1,39 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300&display=swap"
+  rel="stylesheet"
+/>
+<mat-toolbar class="navbar">
+  <mat-toolbar-row style="justify-content: space-between">
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>menu
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-button style="margin-right: 10px" color="primary">
+        View All
+      </button>
+      <button mat-button style="margin-right: 10px" color="primary">
+        Women
+      </button>
+      <button mat-button style="margin-right: 10px" color="primary">
+        Men
+      </button></mat-menu
+    >
+    <a routerLink=""><h1>MyCloset</h1></a>
+    <div>
+      <button mat-button (click)="openAccountPage()">
+        <mat-icon>person</mat-icon>Account
+      </button>
+      <button
+        mat-button
+        (click)="openCart()"
+        style="margin-right: 10px"
+        color="primary"
+      >
+        <mat-icon>shopping_cart</mat-icon>
+        Cart
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

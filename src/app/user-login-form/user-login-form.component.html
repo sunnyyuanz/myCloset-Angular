@@ -1,6 +1,6 @@
-<mat-card>
+<mat-card style="margin-top: 5rem">
   <mat-card-header>
-    <mat-card-title>Login!</mat-card-title>
+    <mat-card-title>ACCOUNT</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <form>
@@ -28,7 +28,11 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button (click)="loginUser()" color="primary">
-      Login
+      Sign in
     </button>
+    <div class="sign-in-or"><p>Or</p></div>
+    <a routerLink="/registration"
+      ><button mat-raised-button color="primary">Create an account</button></a
+    >
   </mat-card-actions>
 </mat-card>

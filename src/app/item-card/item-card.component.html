@@ -1,0 +1,26 @@
+<div
+  style="
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+    margin: 5rem auto;
+    justify-content: center;
+  "
+>
+  <mat-card *ngFor="let item of items; let i = index" style="margin: 1rem">
+    <button style="background: none; border: none">
+      <img
+        mat-card-image
+        src="{{ item.imgs + 'cover' + '.jpg' }}"
+        style="width: 80%; align-self: center"
+      />
+    </button>
+
+    <mat-card-header style="justify-content: space-between"
+      ><mat-card-title>{{ item.name }}</mat-card-title>
+
+      <mat-card-subtitle>{{ "$" + item.price }}</mat-card-subtitle>
+      <mat-icon>favorite_border</mat-icon>
+    </mat-card-header>
+  </mat-card>
+</div>

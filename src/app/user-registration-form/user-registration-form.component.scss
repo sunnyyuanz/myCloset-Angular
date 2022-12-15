@@ -1,0 +1,21 @@
+mat-card{
+    align-items: center;
+    margin: 5rem auto;
+    width: 50%;
+    padding: 1rem;
+}
+.mat-mdc-form-field{
+    display: flex;
+    margin-top: 2rem;
+}
+.mdc-button{
+    display: block !important;
+}
+
+.mdc-card__actions{
+    flex-direction: column;
+}
+
+.mat-mdc-card-header{
+    font-size: 1.5rem;
+}
