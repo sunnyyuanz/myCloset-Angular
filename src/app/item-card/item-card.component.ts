@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ItemCardComponent {
   items: any[] = [];
-  gender = window.location.pathname.split('/')[2];
+  gender = window.location.pathname.split('/').slice(-1).toString();
   categories: any[] = [];
   constructor(public router: Router) {
     this.getItems();
@@ -22,7 +22,7 @@ export class ItemCardComponent {
   ngOnInit(): void {}
 
   getItems(): void {
-    if (!this.gender) {
+    if (this.gender == 'items') {
       console.log(this.gender);
       this.items = mockdata;
     } else {
