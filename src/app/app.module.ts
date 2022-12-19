@@ -19,14 +19,21 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { AccountComponent } from './account/account.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ItemViewComponent } from './item-view/item-view.component';
+import { MatSelectModule } from '@angular/material/select';
+import { UserUpdateFormComponent } from './user-update-form/user-update-form.component';
 
 const appRoutes: Routes = [
   { path: 'account', component: AccountComponent },
+  { path: 'update', component: UserUpdateFormComponent },
   { path: 'items', component: ItemCardComponent },
-  { path: 'profile', component: UserProfileComponent },
+  { path: 'items/Women', component: ItemCardComponent },
+  { path: 'items/Men', component: ItemCardComponent },
+  { path: 'items/:ID', component: ItemViewComponent },
   { path: 'registration', component: UserRegistrationFormComponent },
   { path: '', redirectTo: 'items', pathMatch: 'prefix' },
 ];
@@ -40,6 +47,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     AccountComponent,
     UserProfileComponent,
+    ItemViewComponent,
+    UserUpdateFormComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -58,6 +67,8 @@ const appRoutes: Routes = [
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
+    MatGridListModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

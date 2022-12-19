@@ -1,1 +1,48 @@
-<p style="margin: 5rem"></p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>PROFILE INFORMATION</mat-card-title>
+    <button mat-raised-button (click)="signOut()" color="primary">
+      Sign Out
+    </button>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <p>Username:</p>
+      <p>{{ userInfo.Username }}</p>
+    </div>
+    <div>
+      <p>Password:</p>
+      <p>***************</p>
+    </div>
+    <hr />
+    <div>
+      <p>Wishlist:</p>
+      <mat-card *ngFor="let item of items; let i = index" style="margin: 1rem">
+        <a
+          routerLink="/items/{{ item.id }}"
+          style="background: none; border: none"
+        >
+          <img
+            mat-card-image
+            src="{{ item.imgs + 'cover' + '.jpg' }}"
+            style="width: 80%; align-self: center"
+          />
+        </a>
+
+        <mat-card-header style="justify-content: center; text-align: center"
+          ><mat-card-title>{{ item.name }}</mat-card-title>
+
+          <mat-card-subtitle>{{ "$" + item.price }}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="updateForm()" color="primary">
+      Update Info
+    </button>
+    <button mat-raised-button (click)="deRegistered()">
+      Unsubscribe/Deregistered?
+    </button>
+  </mat-card-actions>
+</mat-card>

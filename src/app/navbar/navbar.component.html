@@ -5,34 +5,43 @@
   rel="stylesheet"
 />
 <mat-toolbar class="navbar">
-  <mat-toolbar-row style="justify-content: space-between">
-    <button mat-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>menu
+  <mat-toolbar-row style="justify-content: space-between; padding: 0">
+    <button mat-button [matMenuTriggerFor]="menu" class="iconButton">
+      <mat-icon>menu</mat-icon><span>menu</span>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-button style="margin-right: 10px" color="primary">
+      <a routerLink="" mat-button style="margin-right: 10px" color="primary">
         View All
-      </button>
-      <button mat-button style="margin-right: 10px" color="primary">
+      </a>
+      <a
+        routerLink="items/Women"
+        mat-button
+        style="margin-right: 10px"
+        color="primary"
+      >
         Women
-      </button>
-      <button mat-button style="margin-right: 10px" color="primary">
+      </a>
+      <a
+        routerLink="items/Men"
+        mat-button
+        style="margin-right: 10px"
+        color="primary"
+      >
         Men
-      </button></mat-menu
+      </a></mat-menu
     >
     <a routerLink=""><h1>MyCloset</h1></a>
     <div>
-      <button mat-button (click)="openAccountPage()">
-        <mat-icon>person</mat-icon>Account
+      <button mat-button (click)="openAccountPage()" class="iconButton">
+        <mat-icon>person</mat-icon><span>Account</span>
       </button>
       <button
         mat-button
         (click)="openCart()"
-        style="margin-right: 10px"
         color="primary"
+        class="iconButton"
       >
-        <mat-icon>shopping_cart</mat-icon>
-        Cart
+        <mat-icon>shopping_cart</mat-icon><span>Cart</span>
       </button>
     </div>
   </mat-toolbar-row>

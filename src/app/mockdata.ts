@@ -2,7 +2,7 @@ const mockdata = [
   {
     id: 1,
     name: 'Beige Trench Coat',
-    color: ['Beige'],
+    colors: ['Beige'],
     gender: 'Men',
     size: 'One Size',
     category: 'Outwear',
@@ -13,7 +13,7 @@ const mockdata = [
   {
     id: 2,
     name: 'Cheongsam',
-    color: ['red', 'white'],
+    colors: ['red', 'white'],
     gender: 'Women',
     size: 'One Size',
     category: 'Dress',
@@ -24,7 +24,7 @@ const mockdata = [
   {
     id: 3,
     name: 'Hoodies',
-    color: ['orange', 'black'],
+    colors: ['orange', 'black'],
     gender: 'Women',
     size: 'One Size',
     category: 'Top',
@@ -35,7 +35,7 @@ const mockdata = [
   {
     id: 4,
     name: 'Jean Jacket',
-    color: ['blue'],
+    colors: ['blue'],
     gender: 'Women',
     size: 'One Size',
     category: 'Jacket',
@@ -46,7 +46,7 @@ const mockdata = [
   {
     id: 5,
     name: 'Just Tshirt',
-    color: ['white', 'black'],
+    colors: ['white', 'black'],
     gender: 'Women',
     size: 'One Size',
     category: 'Top',
@@ -57,7 +57,7 @@ const mockdata = [
   {
     id: 6,
     name: 'Leather Jacket',
-    color: ['black'],
+    colors: ['black'],
     gender: 'Women',
     size: 'One Size',
     category: 'Jacket',
@@ -68,7 +68,7 @@ const mockdata = [
   {
     id: 7,
     name: 'Python Top',
-    color: ['grey'],
+    colors: ['grey'],
     gender: 'Women',
     size: 'One Size',
     category: 'Top',
@@ -79,7 +79,7 @@ const mockdata = [
   {
     id: 8,
     name: 'Croptop Pants Set',
-    color: ['red'],
+    colors: ['red'],
     gender: 'Women',
     size: 'One Size',
     category: 'Set',
@@ -90,7 +90,7 @@ const mockdata = [
   {
     id: 9,
     name: 'Red Square Shirt',
-    color: ['red'],
+    colors: ['red'],
     gender: 'Men',
     size: 'One Size',
     category: 'Top',
@@ -101,7 +101,7 @@ const mockdata = [
   {
     id: 10,
     name: 'Silver Jacket',
-    color: ['Silver'],
+    colors: ['Silver'],
     gender: 'Men',
     size: 'One Size',
     category: 'Jacket',
@@ -112,7 +112,7 @@ const mockdata = [
   {
     id: 11,
     name: 'Silver Maxi Dress',
-    color: ['Silver'],
+    colors: ['Silver'],
     gender: 'Women',
     size: 'One Size',
     category: 'Dress',
@@ -123,7 +123,7 @@ const mockdata = [
   {
     id: 12,
     name: 'Stripe Shirtdress',
-    color: ['red'],
+    colors: ['red'],
     gender: 'Women',
     size: 'One Size',
     category: 'Dress',
@@ -134,7 +134,7 @@ const mockdata = [
   {
     id: 13,
     name: 'Suit Set',
-    color: ['pink', 'black', 'white'],
+    colors: ['pink', 'black', 'white'],
     gender: 'Women',
     size: 'One Size',
     category: 'Dress',
@@ -145,7 +145,7 @@ const mockdata = [
   {
     id: 14,
     name: 'Fall Trench Coat',
-    color: ['light grey', 'khaki', 'white'],
+    colors: ['light grey', 'khaki', 'white'],
     gender: 'Women',
     size: 'One Size',
     category: 'Outwear',
@@ -156,7 +156,7 @@ const mockdata = [
   {
     id: 15,
     name: 'White Jumpsuit',
-    color: ['white'],
+    colors: ['white'],
     gender: 'Women',
     size: 'One Size',
     category: 'Set',
@@ -167,7 +167,7 @@ const mockdata = [
   {
     id: 16,
     name: 'White Polkadot Dress',
-    color: ['white'],
+    colors: ['white'],
     gender: 'Women',
     size: 'One Size',
     category: 'Dress',
@@ -178,7 +178,7 @@ const mockdata = [
   {
     id: 17,
     name: 'White Stripe Pants',
-    color: ['navy'],
+    colors: ['navy'],
     gender: 'Women',
     size: 'One Size',
     category: 'Pants',
@@ -189,7 +189,7 @@ const mockdata = [
   {
     id: 18,
     name: 'White Suit',
-    color: ['white'],
+    colors: ['white'],
     gender: 'Women',
     size: 'One Size',
     category: 'Jacket',
@@ -200,7 +200,7 @@ const mockdata = [
   {
     id: 19,
     name: 'Wine Red Croptop Set',
-    color: ['wine red'],
+    colors: ['wine red'],
     gender: 'Women',
     size: 'One Size',
     category: 'Set',
@@ -211,7 +211,7 @@ const mockdata = [
   {
     id: 20,
     name: 'Winter Trench Coat',
-    color: ['Brown', 'light pink'],
+    colors: ['Brown', 'light pink'],
     gender: 'Women',
     size: 'One Size',
     category: 'Outwear',

@@ -1,4 +1,33 @@
 .mat-mdc-card{
-    background-color: #E5E2DB;
+    background-color: transparent;
     padding: 0.5rem;
+    box-shadow: none;
+}
+
+.categories{
+    margin: 5rem auto 0;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+}
+
+.itemCards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+    margin: 5rem auto;
+    justify-content: center;
+}
+
+@media only screen and (max-width:600px)  {
+    .categories{
+        flex-direction: row;
+        margin-top: 3rem;
+        background-color: #f6f1eb ;
+        z-index: 999;
+    }
+    .itemCards{
+        grid-template-columns: 1fr 1fr;
+    }
 }

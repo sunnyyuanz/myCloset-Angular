@@ -35,50 +35,60 @@ export class FetchApiDataService {
   userGetInfo(): Observable<any> {
     const user = localStorage.getItem('user');
     const token = localStorage.getItem('token');
-    console.log(token);
     return this.http
       .get(apiUrl + `users/${user}`, {
-        headers: new HttpHeaders({ Authorization: `Bearer${token}` }),
+        headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
   }
 
-  GetWishList(wishList: any): Observable<any> {
-    console.log(wishList);
-    let user = localStorage.getItem('user');
+  AddToWishList(product_id: any): Observable<any> {
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
     return this.http
-      .get(apiUrl + `users/${user}/collections`, wishList)
+      .post(
+        apiUrl + `users/${user}/wishlist/${product_id}`,
+        {},
+        {
+          headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+        }
+      )
       .pipe(catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
   }
 
-  AddToWishList(product_id: any, wishList: any): Observable<any> {
-    console.log(product_id, wishList);
-    let user = localStorage.getItem('user');
+  RemoveFromWishList(product_id: any): Observable<any> {
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
     return this.http
-      .post(apiUrl + `users/${user}/collections/${product_id}`, wishList)
+      .delete(apiUrl + `users/${user}/wishlist/${product_id}`, {
+        headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+      })
       .pipe(catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
   }
 
-  RemoveFromWishList(product_id: any, wishList: any): Observable<any> {
-    console.log(product_id, wishList);
-    let user = localStorage.getItem('user');
+  RemoveUser(): Observable<any> {
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
     return this.http
-      .delete(apiUrl + `users/${user}/collections/${product_id}`, wishList)
-      .pipe(catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
-  }
-
-  RemoveUser(userDetails: any): Observable<any> {
-    console.log(userDetails);
-    return this.http
-      .delete(apiUrl + `users/${userDetails.username}`, userDetails)
+      .delete(apiUrl + `users/${user}`, {
+        headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+      })
       .pipe(catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
   }
 
   EditUser(userDetails: any): Observable<any> {
     console.log(userDetails);
+    const user = localStorage.getItem('user');
+    const token = localStorage.getItem('token');
     return this.http
-      .put(apiUrl + `users/${userDetails.username}`, userDetails)
-      .pipe(catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
+      .put(
+        apiUrl + `users/${user}`,
+        { Username: userDetails.Username, Password: userDetails.Password },
+        {
+          headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+        }
+      )
+      .pipe(map(this.extractResponseData), catchError(this.handleError)); // pipe() fucntion is from RxJS, a reactive programming library for Javascript, is used to combine multiple functions into a single function.
   }
 
   private extractResponseData(res: any): any {

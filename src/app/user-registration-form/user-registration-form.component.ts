@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 //this import is used to display notifications back to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-registration-form',
@@ -13,7 +14,8 @@ export class UserRegistrationFormComponent implements OnInit {
   @Input() userData = { Username: '', Password: '', ConfirmPassword: '' };
   constructor(
     public fetchApiData: FetchApiDataService,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    public router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -24,13 +26,14 @@ export class UserRegistrationFormComponent implements OnInit {
       (result) => {
         //logic for a successful user registration goes here!(To be implemented)
         console.log(result);
-        this.snackBar.open(result, 'OK', {
+        this.snackBar.open('Account is successfully registered!', 'OK', {
           duration: 2000,
         });
+        this.router.navigate(['account']);
       },
       (result) => {
         console.log(result);
-        this.snackBar.open(result, 'OK', {
+        this.snackBar.open('Account is successfully registered!', 'OK', {
           duration: 2000,
         });
       }

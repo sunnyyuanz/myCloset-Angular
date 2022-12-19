@@ -15,5 +15,4 @@ export class AccountComponent implements OnInit {
       this.loggedIn = true;
     }
   }
-  
 }
