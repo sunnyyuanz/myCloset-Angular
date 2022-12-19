@@ -13,7 +13,7 @@ export class ItemViewComponent {
   imgs: any = [];
   wishlist: any = [];
   constructor(public router: Router, public fetchApiData: FetchApiDataService) {
-    const id = window.location.pathname.split('/')[2];
+    const id = window.location.pathname.split('/').slice(-1).toString();
     this.item = mockdata.find((item: any) => item.id == id);
   }
   ngOnInit(): void {
