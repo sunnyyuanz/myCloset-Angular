@@ -7,7 +7,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Outwear',
     price: 120,
-    imgs: '/assets/item-images/beige-trench-thinlayer-man/',
+    imgs: './assets/item-images/beige-trench-thinlayer-man/',
     imgs_length: 2,
   },
   {
@@ -18,7 +18,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Dress',
     price: 70,
-    imgs: '/assets/item-images/cheongsam/',
+    imgs: './assets/item-images/cheongsam/',
     imgs_length: 3,
   },
   {
@@ -29,7 +29,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Top',
     price: 50,
-    imgs: '/assets/item-images/hoodies/',
+    imgs: './assets/item-images/hoodies/',
     imgs_length: 2,
   },
   {
@@ -40,7 +40,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Jacket',
     price: 50,
-    imgs: '/assets/item-images/jean-jacket/',
+    imgs: './assets/item-images/jean-jacket/',
     imgs_length: 3,
   },
   {
@@ -51,7 +51,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Top',
     price: 20,
-    imgs: '/assets/item-images/just-tshirt-woman/',
+    imgs: './assets/item-images/just-tshirt-woman/',
     imgs_length: 2,
   },
   {
@@ -62,7 +62,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Jacket',
     price: 80,
-    imgs: '/assets/item-images/leather-jacket/',
+    imgs: './assets/item-images/leather-jacket/',
     imgs_length: 2,
   },
   {
@@ -73,7 +73,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Top',
     price: 30,
-    imgs: '/assets/item-images/python-top/',
+    imgs: './assets/item-images/python-top/',
     imgs_length: 4,
   },
   {
@@ -84,7 +84,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Set',
     price: 100,
-    imgs: '/assets/item-images/croptop-pants-set/',
+    imgs: './assets/item-images/croptop-pants-set/',
     imgs_length: 2,
   },
   {
@@ -95,7 +95,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Top',
     price: 60,
-    imgs: '/assets/item-images/red-square-shirt/',
+    imgs: './assets/item-images/red-square-shirt/',
     imgs_length: 2,
   },
   {
@@ -106,7 +106,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Jacket',
     price: 70,
-    imgs: '/assets/item-images/silver-jacket/',
+    imgs: './assets/item-images/silver-jacket/',
     imgs_length: 3,
   },
   {
@@ -117,7 +117,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Dress',
     price: 70,
-    imgs: '/assets/item-images/silver-maxi-dress/',
+    imgs: './assets/item-images/silver-maxi-dress/',
     imgs_length: 4,
   },
   {
@@ -128,7 +128,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Dress',
     price: 60,
-    imgs: '/assets/item-images/stripe-shirtdress/',
+    imgs: './assets/item-images/stripe-shirtdress/',
     imgs_length: 2,
   },
   {
@@ -139,7 +139,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Dress',
     price: 110,
-    imgs: '/assets/item-images/suit-set/',
+    imgs: './assets/item-images/suit-set/',
     imgs_length: 3,
   },
   {
@@ -150,7 +150,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Outwear',
     price: 120,
-    imgs: '/assets/item-images/fall-trench-coat/',
+    imgs: './assets/item-images/fall-trench-coat/',
     imgs_length: 3,
   },
   {
@@ -161,7 +161,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Set',
     price: 90,
-    imgs: '/assets/item-images/white-jumpsuit/',
+    imgs: './assets/item-images/white-jumpsuit/',
     imgs_length: 3,
   },
   {
@@ -172,7 +172,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Dress',
     price: 65,
-    imgs: '/assets/item-images/white-polkadot-dress/',
+    imgs: './assets/item-images/white-polkadot-dress/',
     imgs_length: 3,
   },
   {
@@ -183,7 +183,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Pants',
     price: 50,
-    imgs: '/assets/item-images/white-stripe-pants/',
+    imgs: './assets/item-images/white-stripe-pants/',
     imgs_length: 5,
   },
   {
@@ -194,7 +194,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Jacket',
     price: 55,
-    imgs: '/assets/item-images/white-suit/',
+    imgs: './assets/item-images/white-suit/',
     imgs_length: 2,
   },
   {
@@ -205,7 +205,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Set',
     price: 115,
-    imgs: '/assets/item-images/wine-red-croptop-set/',
+    imgs: './assets/item-images/wine-red-croptop-set/',
     imgs_length: 2,
   },
   {
@@ -216,7 +216,7 @@ const mockdata = [
     size: 'One Size',
     category: 'Outwear',
     price: 120,
-    imgs: '/assets/item-images/winter-trench-coat/',
+    imgs: './assets/item-images/winter-trench-coat/',
     imgs_length: 2,
   },
 ];
