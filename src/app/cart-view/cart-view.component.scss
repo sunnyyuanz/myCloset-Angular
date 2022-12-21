@@ -82,3 +82,31 @@ mat-card-title{
 button{
     margin:1rem
 }
+
+@media only screen and (max-width:600px)  {
+.cart-content{
+    display: flex;
+    flex-direction: column;
+}
+.cart mat-card{
+    grid-template-columns: 1fr 1fr;
+}
+
+.cartItem {
+    padding: 0;
+    div{
+        flex-direction: column;
+        padding-bottom: 1rem;
+        margin-right: 1rem;
+    }
+
+    p{
+        margin-bottom: 0;
+        
+    }
+    .totalPrice{
+        margin-right: 1rem;
+    }
+}
+
+}

@@ -83,3 +83,18 @@ button{
     height: 10rem;
     margin: 0.5rem;
 }
+
+@media only screen and (max-width:600px)  {
+    .orderReview-page{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .shipping-billing-details section {
+        .address, .payment-details{
+            padding: 1rem 0;
+        }
+    }
+    
+    }
