@@ -3,6 +3,7 @@
   <hr />
   <div class="cart-content">
     <section class="cart">
+      <div *ngIf="empty" class="emptyMsg">Your Cart is Empty</div>
       <mat-card *ngFor="let item of cart; let i = index">
         <img mat-card-image src="{{ item.img }}" />
         <div class="cartItem">
@@ -30,7 +31,12 @@
         <h4>
           <span>Estimated Total:</span><span>${{ orderTotal }}</span>
         </h4>
-        <button mat-raised-button color="primary" (click)="checkoutView()">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="checkoutView()"
+          *ngIf="!empty"
+        >
           Checkout
         </button>
         <button mat-raised-button color="primary" (click)="continueShopping()">

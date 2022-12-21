@@ -9,11 +9,13 @@ import { Router } from '@angular/router';
 export class CartViewComponent {
   cart: any = [];
   orderTotal = 0;
+  empty = true;
   constructor(public router: Router) {
     const cartString = localStorage.getItem('cart') || '';
     if (cartString) {
       this.cart = JSON.parse(cartString);
       console.log(this.cart);
+      this.empty = false;
     }
     this.calculateOrderTotal();
   }
