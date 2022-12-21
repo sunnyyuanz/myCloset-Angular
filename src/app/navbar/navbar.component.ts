@@ -29,5 +29,7 @@ export class NavbarComponent {
   openAccountPage(): void {
     this.router.navigate(['account']);
   }
-  openCart(): void {}
+  openCart(): void {
+    this.router.navigate(['cart']);
+  }
 }

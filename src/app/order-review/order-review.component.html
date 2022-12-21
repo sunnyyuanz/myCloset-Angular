@@ -1,0 +1,57 @@
+<div class="orderReview-page">
+  <div class="shipping-billing-details">
+    <h2>Order Review</h2>
+    <section class="shipping-details">
+      <h3>Shipping Details</h3>
+      <div class="address">
+        <p>Free Standard Shipping</p>
+        <div>
+          <h4>Shipping To:</h4>
+          Sunny Zhu<br />
+          123 Apple St<br />
+          New York, NY 12345<br />
+        </div>
+      </div>
+    </section>
+    <section class="billing-details">
+      <h3>Payment</h3>
+      <div class="payment-details">
+        <p>Visa xxx8765<br />exp. 11/28</p>
+        <div>
+          <h4>Billing To:</h4>
+          Sunny Zhu<br />
+          123 Kiwi St<br />
+          New York, NY 12435<br />
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="cart-view">
+    <mat-card class="orderSummary">
+      <section>
+        <mat-card-header>
+          <mat-card-title>Order Summary</mat-card-title>
+        </mat-card-header>
+        <p>
+          <span>Subtotal:</span> <span>${{ orderTotal }}</span>
+        </p>
+        <p><span>Shipping:</span> <span>FREE</span></p>
+        <h4>
+          <span>Total:</span><span>${{ orderTotal }}</span>
+        </h4>
+        <button mat-raised-button color="primary" (click)="thankyouPage()">
+          Place Order
+        </button>
+      </section>
+      <h4>Shopping Bag:</h4>
+      <mat-card *ngFor="let item of cart; let i = index" class="order_item">
+        <img mat-card-image src="{{ item.img }}" />
+        <div>
+          <p class="itemName">{{ item.name }}</p>
+          <p>Quantity: {{ item.quantity }}</p>
+          <p class="totalPrice">Total Price: ${{ item.totalPrice }}</p>
+        </div>
+      </mat-card>
+    </mat-card>
+  </div>
+</div>

@@ -7,8 +7,16 @@ mat-card-header, mat-card-actions{
     justify-content: space-between;
 }
 
+.wishlist{
+display: flex;
+}
+
 @media only screen and (max-width:600px)  {
     mat-card{
         width: 90%;
     }
+    .wishlist{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        }
 }

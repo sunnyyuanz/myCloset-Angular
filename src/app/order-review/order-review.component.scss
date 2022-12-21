@@ -1,0 +1,85 @@
+.orderReview-page{
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    width: 70%;
+    margin: 7rem auto;
+}
+
+h2{
+    margin-top: 0;
+
+}
+.shipping-details{
+
+margin: 2rem 0;
+}
+
+.billing-details{
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+}
+
+.shipping-billing-details section{
+    h4{
+        padding-top: 0;
+        margin-top: 0;
+    }
+    .address, .payment-details{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 4rem;
+    }
+
+}
+
+.mat-mdc-card-header{
+    padding: 0;
+}
+mat-card section{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #444;
+    p,h4{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+mat-card img{
+    justify-self: center; 
+    align-self: center; 
+    margin: 0.5rem;
+    width: 30%;
+    max-width: 100px;
+}
+
+mat-card-title{
+    font-weight:600;
+}
+
+.orderSummary{
+    margin: 2rem 0.5rem;
+    padding: 2rem
+}
+
+.totalPrice{
+    align-self: end;
+    margin-right: 2rem;
+}
+
+h4{
+    padding-top: 2rem;
+}
+
+mat-card-title{
+    margin-bottom: 1rem;
+}
+button{
+    margin:1rem
+}
+
+.order_item{
+    display: flex;
+    flex-direction: row;
+    height: 10rem;
+    margin: 0.5rem;
+}

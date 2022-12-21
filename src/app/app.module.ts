@@ -26,11 +26,18 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ItemViewComponent } from './item-view/item-view.component';
 import { MatSelectModule } from '@angular/material/select';
 import { UserUpdateFormComponent } from './user-update-form/user-update-form.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { CartViewComponent } from './cart-view/cart-view.component';
+import { OrderReviewComponent } from './order-review/order-review.component';
+import { ThankyouPageComponent } from './thankyou-page/thankyou-page.component';
 
 const appRoutes: Routes = [
   { path: 'account', component: AccountComponent },
   { path: 'update', component: UserUpdateFormComponent },
   { path: 'items', component: ItemCardComponent },
+  { path: 'cart', component: CartViewComponent },
+  { path: 'order-review', component: OrderReviewComponent },
+  { path: 'thankyou', component: ThankyouPageComponent },
   { path: 'items/Women', component: ItemCardComponent },
   { path: 'items/Men', component: ItemCardComponent },
   { path: 'items/:ID', component: ItemViewComponent },
@@ -49,6 +56,9 @@ const appRoutes: Routes = [
     UserProfileComponent,
     ItemViewComponent,
     UserUpdateFormComponent,
+    CartViewComponent,
+    OrderReviewComponent,
+    ThankyouPageComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -69,6 +79,7 @@ const appRoutes: Routes = [
     MatMenuModule,
     MatGridListModule,
     MatSelectModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

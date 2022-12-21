@@ -27,14 +27,14 @@ export class UserRegistrationFormComponent implements OnInit {
         //logic for a successful user registration goes here!(To be implemented)
         console.log(result);
         this.snackBar.open('Account is successfully registered!', 'OK', {
-          duration: 2000,
+          duration: 3000,
         });
         this.router.navigate(['account']);
       },
       (result) => {
         console.log(result);
         this.snackBar.open('Account is successfully registered!', 'OK', {
-          duration: 2000,
+          duration: 3000,
         });
       }
     );

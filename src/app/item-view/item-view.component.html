@@ -1,35 +1,54 @@
 <div class="item_view">
-  <section class="item_detail">
-    <img src="{{ item.imgs + 'cover' + '.jpg' }}" alt="" />
+    <section class="item_detail">
+      <div class="moreImgs">
+        <div *ngFor="let img of imgs">
+          <img
+            src="{{ img }}"
+            alt="{{ item.name }}"
+            width="50px"
+            height="60px"
+            (click)="clickToEnlarge(img)"
+          />
+        </div>
+      </div>
+      <img src="{{ mainImg }}" alt="Image" width="100%" />
 
-    <div>
-      <p class="header">
-        {{ item.name
-        }}<button mat-button (click)="toggleWishlist(item)">
-          <mat-icon>favorite_border</mat-icon>
+      <div>
+        <p class="header">
+          {{ item.name
+          }}<button mat-button (click)="toggleWishlist(item)">
+            <mat-icon *ngIf="!wishlist.includes(item.id.toString())"
+              >favorite_border</mat-icon
+            >
+            <mat-icon *ngIf="wishlist.includes(item.id.toString())"
+              >favorite</mat-icon
+            >
+          </button>
+        </p>
+        <p>${{ item.price }}</p>
+        <mat-form-field appearance="fill">
+          <mat-label>Color</mat-label>
+          <mat-select (selectionChange)="changeColor($event)">
+            <mat-option *ngFor="let color of item.colors" [value]="color">{{
+              color
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Quantity</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="1"
+            name="Quantity"
+            [(ngModel)]="quantity"
+          />
+        </mat-form-field>
+        <p>**{{ item.size }}**</p>
+        <button mat-raised-button color="primary" (click)="addToCart()">
+          ADD TO CART
         </button>
-      </p>
-      <p>${{ item.price }}</p>
-      <mat-form-field appearance="fill">
-        <mat-label>Color</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let color of item.colors" [value]="color">{{
-            color
-          }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Quantity</mat-label>
-        <input matInput type="number" placeholder="1" name="Quantity" />
-      </mat-form-field>
-      <p>**{{ item.size }}**</p>
-      <button mat-raised-button color="primary">ADD TO CART</button>
-    </div>
-  </section>
-  <hr />
-  <section class="moreImgs">
-    <div *ngFor="let img of imgs">
-      <img src="{{ img }}" alt="{{ item.name }}" />
-    </div>
-  </section>
-</div>
+      </div>
+    </section>
+    <hr />
+  </div>

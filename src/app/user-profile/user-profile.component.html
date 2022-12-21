@@ -15,12 +15,12 @@
       <p>***************</p>
     </div>
     <hr />
-    <div>
-      <p>Wishlist:</p>
+    <p>Wishlist:</p>
+    <div class="wishlist">
       <mat-card *ngFor="let item of items; let i = index" style="margin: 1rem">
         <a
           routerLink="/items/{{ item.id }}"
-          style="background: none; border: none"
+          style="background: none; border: none; text-align: center"
         >
           <img
             mat-card-image
@@ -41,7 +41,7 @@
     <button mat-raised-button (click)="updateForm()" color="primary">
       Update Info
     </button>
-    <button mat-raised-button (click)="deRegistered()">
+    <button mat-raised-button (click)="confirmDeregister()">
       Unsubscribe/Deregistered?
     </button>
   </mat-card-actions>

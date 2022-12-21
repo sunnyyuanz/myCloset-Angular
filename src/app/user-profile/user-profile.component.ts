@@ -61,16 +61,18 @@ export class UserProfileComponent {
     });
   }
 
-  deRegistered(): void {
-    this.router.navigate(['']).then(() => {
-      this.snackBar.open('Account has successfully been deleted!', 'OK', {
-        duration: 2000,
+  confirmDeregister(): void {
+    if (confirm('This Account will be gone FOREVER!')) {
+      this.router.navigate(['']).then(() => {
+        this.snackBar.open('Account has successfully been deleted!', 'OK', {
+          duration: 2000,
+        });
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
       });
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-    });
-    this.fetchApiData.RemoveUser().subscribe((resp: any) => {
-      console.log(resp);
-    });
+      this.fetchApiData.RemoveUser().subscribe((resp: any) => {
+        console.log(resp);
+      });
+    }
   }
 }

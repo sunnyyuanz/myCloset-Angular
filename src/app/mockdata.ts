@@ -20,6 +20,7 @@ const mockdata = [
     price: 70,
     imgs: './assets/item-images/cheongsam/',
     imgs_length: 3,
+    imgs_index: ['red', 'red', 'white'],
   },
   {
     id: 3,
@@ -31,6 +32,7 @@ const mockdata = [
     price: 50,
     imgs: './assets/item-images/hoodies/',
     imgs_length: 2,
+    imgs_index: ['orange', 'black'],
   },
   {
     id: 4,
@@ -53,6 +55,7 @@ const mockdata = [
     price: 20,
     imgs: './assets/item-images/just-tshirt-woman/',
     imgs_length: 2,
+    imgs_index: ['white', 'black'],
   },
   {
     id: 6,
@@ -141,6 +144,7 @@ const mockdata = [
     price: 110,
     imgs: './assets/item-images/suit-set/',
     imgs_length: 3,
+    imgs_index: ['pink', 'black', 'white'],
   },
   {
     id: 14,
@@ -152,6 +156,7 @@ const mockdata = [
     price: 120,
     imgs: './assets/item-images/fall-trench-coat/',
     imgs_length: 3,
+    imgs_index: ['light grey', 'khaki', 'white'],
   },
   {
     id: 15,
@@ -218,6 +223,7 @@ const mockdata = [
     price: 120,
     imgs: './assets/item-images/winter-trench-coat/',
     imgs_length: 2,
+    imgs_index: ['Brown', 'light pink'],
   },
 ];
 

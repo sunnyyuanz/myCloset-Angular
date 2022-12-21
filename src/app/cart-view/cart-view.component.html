@@ -1,0 +1,42 @@
+<div class="cart-view">
+  <h2>Shopping Bag</h2>
+  <hr />
+  <div class="cart-content">
+    <section class="cart">
+      <mat-card *ngFor="let item of cart; let i = index">
+        <img mat-card-image src="{{ item.img }}" />
+        <div class="cartItem">
+          <mat-icon (click)="clickToRemove(item)">close</mat-icon>
+          <div>
+            <p class="itemName">{{ item.name }}</p>
+            <p>Unit Price: {{ "$" + item.price }}</p>
+            <p>Quantity: {{ item.quantity }}</p>
+          </div>
+          <hr />
+          <p class="totalPrice">Total Price: ${{ item.totalPrice }}</p>
+        </div>
+      </mat-card>
+    </section>
+    <section class="orderSummary">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Order Summary</mat-card-title>
+        </mat-card-header>
+        <p>
+          <span>Subtotal:</span> <span>${{ orderTotal }}</span>
+        </p>
+        <p><span>Estimate Shipping:</span> <span>FREE</span></p>
+
+        <h4>
+          <span>Estimated Total:</span><span>${{ orderTotal }}</span>
+        </h4>
+        <button mat-raised-button color="primary" (click)="checkoutView()">
+          Checkout
+        </button>
+        <button mat-raised-button color="primary" (click)="continueShopping()">
+          Continue Shopping
+        </button>
+      </mat-card>
+    </section>
+  </div>
+</div>
