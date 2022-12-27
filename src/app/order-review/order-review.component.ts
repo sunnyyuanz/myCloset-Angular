@@ -16,6 +16,7 @@ export class OrderReviewComponent {
     }
   }
   thankyouPage(): void {
+    localStorage.removeItem('cart');
     this.router.navigate(['thankyou']);
   }
 }

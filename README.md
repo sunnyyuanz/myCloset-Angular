@@ -1,6 +1,19 @@
 # MyClosetAngularClient
 
+The client-side application based on its existing server-side code(REST API and database), with supporting documentation.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+
+## Key features
+
+- The app should display a list of items as the welcome view.
+- The users can choose to login or register and then to make an order or add items to their wishlist.
+- Once authenticated, the user would be able to continue their order process.
+- Upon clicking on a particular item, users will be taken to a single item view, where additional item details will be displayed.
+
+## Technologies used
+
+TypeScript, Angular, TypeDoc
 
 ## Development server
 
@@ -25,3 +38,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Screenshots
+
+![Welcome page](./screenshots/welcome-view.PNG)
+![Item page](./screenshots/item-view.PNG)
+![Profile page](./screenshots/profile-view.PNG)
+![Login page](./screenshots/login-view.PNG)
+![Register page](./screenshots/register-view.PNG)
+![Cart page](./screenshots/cart-view.PNG)
+![Order Review page](./screenshots/order-review.PNG)

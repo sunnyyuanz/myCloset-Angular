@@ -17,6 +17,7 @@ export class ItemViewComponent {
   mainImg = '';
   color: any;
   cart: any = [];
+  login = localStorage.getItem('token') || '';
   @Input() quantity = 1;
   constructor(
     public router: Router,
@@ -53,20 +54,23 @@ export class ItemViewComponent {
   }
 
   toggleWishlist(item: any): any {
-    const id = item.id.toString();
-    console.log(typeof this.wishlist);
-    if (this.wishlist.includes(id)) {
-      console.log('need to remove');
-      this.fetchApiData.RemoveFromWishList(id).subscribe((resp: any) => {
-        this.wishlist = resp.Wishlist;
-        console.log(this.wishlist);
-      });
+    if (this.login) {
+      const id = item.id.toString();
+      if (this.wishlist.includes(id)) {
+        console.log('need to remove');
+        this.fetchApiData.RemoveFromWishList(id).subscribe((resp: any) => {
+          this.wishlist = resp.Wishlist;
+          console.log(this.wishlist);
+        });
+      } else {
+        console.log('need to add');
+        this.fetchApiData.AddToWishList(id).subscribe((resp: any) => {
+          this.wishlist = resp.Wishlist;
+          console.log(this.wishlist);
+        });
+      }
     } else {
-      console.log('need to add');
-      this.fetchApiData.AddToWishList(id).subscribe((resp: any) => {
-        this.wishlist = resp.Wishlist;
-        console.log(this.wishlist);
-      });
+      this.router.navigate(['account']);
     }
   }
 
@@ -87,29 +91,33 @@ export class ItemViewComponent {
   }
 
   addToCart(): void {
-    if (!this.color) {
-      alert('Please pick a color');
-    } else {
-      const totalPrice = this.item.price * this.quantity;
-      const cartItem = {
-        id: this.item.id,
-        name: this.item.name,
-        color: this.color,
-        quantity: this.quantity,
-        size: this.item.size,
-        price: this.item.price,
-        img: this.item.imgs + 'cover' + '.jpg',
-        totalPrice: totalPrice,
-      };
-      const currentCart = localStorage.getItem('cart');
-      if (currentCart) {
-        this.cart = JSON.parse(currentCart);
+    if (this.login) {
+      if (!this.color) {
+        alert('Please pick a color');
+      } else {
+        const totalPrice = this.item.price * this.quantity;
+        const cartItem = {
+          id: this.item.id,
+          name: this.item.name,
+          color: this.color,
+          quantity: this.quantity,
+          size: this.item.size,
+          price: this.item.price,
+          img: this.item.imgs + 'cover' + '.jpg',
+          totalPrice: totalPrice,
+        };
+        const currentCart = localStorage.getItem('cart');
+        if (currentCart) {
+          this.cart = JSON.parse(currentCart);
+        }
+        this.cart.push(cartItem);
+        localStorage.setItem('cart', JSON.stringify(this.cart));
+        this.snackBar.open('Added to cart!', '', {
+          duration: 3000,
+        });
       }
-      this.cart.push(cartItem);
-      localStorage.setItem('cart', JSON.stringify(this.cart));
-      this.snackBar.open('Added to cart!', '', {
-        duration: 3000,
-      });
+    } else {
+      this.router.navigate(['account']);
     }
   }
 }

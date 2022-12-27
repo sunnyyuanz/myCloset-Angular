@@ -17,7 +17,12 @@ export class FetchApiDataService {
   //Inject the HttpClient module to the constructor params
   //This will provide HttpClient to the entries class, making it available via this.http
   constructor(private http: HttpClient) {}
-  //making the api call for the user registration endpoint
+  /**
+   * User registration
+   * making the api call for the user registration endpoint
+   * @param userDetails - User Form data
+   * @returns User details from the API
+   */
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http
